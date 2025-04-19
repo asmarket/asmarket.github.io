@@ -8,12 +8,12 @@ class ModernPreloader {
         const preloaderHTML = `
             <div id="modern-preloader">
                 <div class="preloader-content">
-                    <div class="preloader-logo">A</div>
+                    <div class="preloader-logo">ASMARKET08017</div>
                     <div class="preloader-progress">
                         <div class="progress-bar"></div>
-                        <div class="progress-text">0%</div>
+                        <div class="progress-text"></div>
                     </div>
-                    <div class="preloader-message">Cargando Exclusividad</div>
+                    <div class="preloader-message">En desarrollo, vuelve a intentarlo más tarde.</div>
                 </div>
             </div>
         `;
@@ -110,14 +110,14 @@ class ModernPreloader {
         let progress = 0;
 
         const updateProgress = () => {
-            if (progress < 100) {
-                progress += Math.random() * 3;
-                progress = Math.min(progress, 100);
+            if (progress < 1) {
+                progress += Math.random() * 1;
+                progress = Math.min(progress, 1);
 
                 progressBar.style.width = `${progress}%`;
                 progressText.textContent = `${Math.round(progress)}%`;
 
-                if (progress < 100) {
+                if (progress < 1) {
                     requestAnimationFrame(updateProgress);
                 } else {
                     this.completeLoading(preloader);
